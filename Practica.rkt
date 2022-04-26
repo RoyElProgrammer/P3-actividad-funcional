@@ -8,6 +8,6 @@
   )
 
 (define (pow n p)
-  (if (= (- p 1) 0)
+  (if (= p 0)
       1
-      ((* n (pow (n (- p 1)))))))
+      (* n (pow n (- p 1)))))
