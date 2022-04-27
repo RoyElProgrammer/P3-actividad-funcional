@@ -1,13 +1,15 @@
 #lang racket
 
-#|
-(define (sign a)
-  (if (= a 0) 0
-      (if (< a 0) -1
-      1)
-      )
-  )
-|#
+; Ejercicio 8: Add-list
+(define sumA 0)
+(define (add-list lst)
+  (if (empty? lst)
+      0
+      (+ (car lst) (add-list (rest lst)))))
+; Casos prueba Add-list  
+;(add-list '()) 
+;(add-list '(2 4 1 3))
+;(add-list '(1 2 3 4 5 6 7 8 9 10)) 
 
 ; Ejercicio 9: Invert-pairs
 (define (reverse-pair lst)
