@@ -9,6 +9,21 @@
   )
 |#
 
+; Ejercicio 9: Invert-pairs
+(define (reverse-pair lst)
+  (cons (second lst) (cons (first lst) empty)))
+
+(define (invert-pairs lst)
+  (if (null? lst)
+      '()
+      (cons (reverse-pair (first lst))
+            (invert-pairs (rest lst)))))
+
+; Casos prueba Invert-pairs
+;(invert-pairs '()) 
+;(invert-pairs '((a 1)(a 2)(b 1)(b 2)))
+;(invert-pairs '((January 1)(February 2)(March 3))) 
+
 ; Ejercicio 10: Swapper
 (define (swapper str1 str2 lst)
   (cond ((empty? lst)
