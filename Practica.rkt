@@ -10,17 +10,28 @@
 |#
 
 ; Ejercicio 10: Swapper
-(define (swapper str1 str2 los)
-  (cond ((empty? los)
+(define (swapper str1 str2 lst)
+  (cond ((empty? lst)
          empty)
-        ((symbol=? str1 (first los))
-         (cons str2 (swapper str1 str2 (rest los))))
-        ((symbol=? str2 (first los))
-         (cons str1 (swapper str1 str2 (rest los))))
+        ((equal? str1 (first lst))
+         (cons str2 (swapper str1 str2 (rest lst))))
+        ((equal? str2 (first lst))
+         (cons str1 (swapper str1 str2 (rest lst))))
         (else
-         (cons (first los) (swapper str1 str2 (rest los))))))
-
+         (cons (first lst) (swapper str1 str2 (rest lst))))))
+;Casos prueba de swapper
 ;(swapper 'x 'y '(a x b c y d x y))
+;(swapper '1 '2 '(1 2 3 4 2 1 3 2))
+;(swapper 'x 'y '())
+
+
+
+
+
+
+        
+
+
 
 
   
