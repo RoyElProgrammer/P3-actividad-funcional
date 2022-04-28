@@ -1,18 +1,28 @@
 #lang racket
 
+; Ejercicio 1: Sign
 (define (sign a)
   (if (= a 0) 0
       (if (< a 0) -1
       1)
       )
   )
+; Casos de prueba Sign
+;(sign -5)
+;(sign 10)
+;(sign 0)
 
+; Ejercicio 2: Pow
 (define (pow n p)
   (if (= p 0)
       1
       (* n (pow n (- p 1)))))
-      
-; Ejercicios Roy
+; Casos de prueba Pow
+;(pow 5 0)
+;(pow -5 3)
+;(pow 15 12)
+
+; Ejercicio 3: BMI
 (define (BMI weight height)
   (define bmi (/ weight (* height height)))
   (if (< bmi 20)
@@ -25,7 +35,14 @@
                   "obese2"
                   "obese3"
                   )))))
+; Casos de prueba BMI
+;(BMI 45 1.7) 
+;(BMI 55 1.5)
+;(BMI 76 1.7)
+;(BMI 81 1.6)
+;(BMI 120 1.6) 
 
+; Ejercicio 4: Fib
 (define i 1)
 (define (fib n)
   (if (= n 0)
@@ -35,8 +52,11 @@
           (if (= n 2)
               1
               (+ (fib(- n 1)) (fib (- n 2)))))))
-      
-; Ejercicios Brandon
+; Casos de prueba Fib
+;(fib 6)
+;(map fib (range 10))
+;(fib 42) 
+
 ; Ejercicio 5: Duplicate
 (define (duplicate lst)
   (if (null? lst)
