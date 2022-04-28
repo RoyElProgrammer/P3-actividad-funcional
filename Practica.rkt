@@ -1,5 +1,45 @@
 #lang racket
 
+; Ejercicio 5: Duplicate
+(define (duplicate lst)
+  (if (null? lst)
+      '()
+      (cons (car lst) 
+      (cons (car lst)
+            (duplicate (rest lst))) )))
+
+;Casos de prueba Duplicate
+;(duplicate '()) 
+;(duplicate '(1 2 3 4 5))
+;(duplicate '(a b c d e f g h))
+
+; Ejercicio 6: Enlist
+(define (enlist lst)
+  (if (null? lst)
+      '()
+      (cons (list (first lst))
+            (enlist (rest lst))) ))
+
+;Casos de prueba Enlist
+;(enlist '())
+;(enlist '(a b c))
+;(enlist '((1 2 3) 4 (5) 7 8))
+
+
+; Ejercicio 7: Positives
+(define lp (list))
+(define (positives lst)
+  (cond ((empty? lst)
+         empty)
+        ((if (> (first lst) -1)
+         (cons (first lst) (positives (rest lst))) (positives (rest lst)) )) ))
+
+;Casos de prueba Positives
+;(positives '()) 
+;(positives '(12 -4 3 -1 -10 -13 6 -5))
+;(positives '(-4 -1 -10 -13 -5)) 
+        
+
 ; Ejercicio 8: Add-list
 (define sumA 0)
 (define (add-list lst)
